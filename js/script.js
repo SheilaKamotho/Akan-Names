@@ -4,6 +4,9 @@ var year = document.getElementsByName ("year")
 var form = document.getElementsByTagName ("form")
 
 form.addEventListener("submit",(e)); {
+    let alert = []
+    if (date.value < 1 || date.value > 31)
+    alert ("Invalid date");
     
 e.preventDefault ()
 }
