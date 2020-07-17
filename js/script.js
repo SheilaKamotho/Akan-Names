@@ -3,4 +3,7 @@ var month = document.getElementsByName ("month")
 var year = document.getElementsByName ("year")
 var form = document.getElementsByTagName ("form")
 
-form.addEventListener
+form.addEventListener("submit",(e)); {
+    
+e.preventDefault ()
+}
