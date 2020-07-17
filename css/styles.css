@@ -1,0 +1,12 @@
+img {
+    width: 500px;
+    height: 400px;
+    }
+.male {
+        float:left;
+        width: 300px;
+    }
+.female {
+        float:right;
+        width: 70%;
+    }
