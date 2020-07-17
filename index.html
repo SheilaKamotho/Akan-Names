@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="container">
-    <div class="jumbotron">  
+      <div class="jumbotron">  
     <h1>Akan Name Generator</h1>
     <script src ="js/script.js"></script>
     <img src="images/africa.png" alt="A photo of african culture">
@@ -20,21 +20,23 @@
     <h2>Lets have some fun!</h2>
     <p>Generate your Akan name whilst discovering the day you were born by</p>
     <p>submitting your birth date details and selecting your gender below.</p>
+    <strong>
     <form>
      <label for ="date" > Birthdate </label>
-     <input type ="number" name ="date" placeholder="DD" min=1 max= 31><br>
+     <input type ="number" id ="date" placeholder="DD" min=1 max= 31><br>
      <label for ="month" > Birthmonth </label>
-     <input type ="number" name ="month" placeholder="MM" min=1 max= 12><br>
+     <input type ="number" id ="month" placeholder="MM" min=1 max= 12><br>
      <label for ="year" > Birthyear</label>
-     <input type ="number" name ="year" placeholder="YYYY" min=1000 max= 9999><br> 
-     <label for ="gender" >Gender</label><br>
+     <input type ="number" id ="year" placeholder="YYYY" min=1000 max= 9999><br> 
+     <label for ="gender">Gender</label><br>
      <input type="radio" id="male" name="gender">
      <label for="male">Male</label><br>
      <input type="radio" id="female" name="gender">
      <label for="female">Female</label><br>
-     <button>Generate Akan Name</button>
+     <button>Generate</button>
     </form>
-    </div>
+  </strong>
+      </div>
     </div>    
   </body>
 </html>

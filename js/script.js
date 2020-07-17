@@ -1,19 +1,14 @@
-var date = document.getElementsByName ("date")
-var month = document.getElementsByName ("month")
-var year = document.getElementsByName ("year")
-var form = document.getElementsByTagName ("form")
-var gender = document.getElementsByName ("gender")
+var date = parseInt(document.getElementsById ("date").value);
+var month = parseInt(document.getElementsById ("month").value);
+var year = parseInt(document.getElementsById ("year").value);
 
-    if (date < 1 || date > 31)
-    console.log ("Invalid date");
-    if (month < 1 || month > 12)
-    console.log ("Invalid month");
+ var century =  Math.round(year/100;)
+ dayOfWeek = ( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day )%7;
+ console.log(dayofWeek);
+ document.getElementById("result").innerHTML =(dayOfWeek);
 
-
- var century = math.round((year)/100)
- dayOfWeek = (((century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day )%7
-
- if (gender === male && dayOfWeek === 0) {
+ var male = ("kwasi","kwadwo","kwabena","kwaku","yaw", "kofi","kwame")
+ if ((gender === male && (dayOfWeek === 0) {
      console.log("Your birth day was Sunday. Your name is Kwasi")
  } else if (gender === male && dayOfWeek === 1) {
     console.log ("Your birth day was Monday. Your name is Kwadwo")
