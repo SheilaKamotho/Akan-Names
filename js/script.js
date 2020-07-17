@@ -2,11 +2,11 @@ var date = document.getElementsByName ("date")
 var month = document.getElementsByName ("month")
 var year = document.getElementsByName ("year")
 var form = document.getElementsByTagName ("form")
-var gender = documrnt.getElementsByName ("gender")
+var gender = document.getElementsByName ("gender")
 
-    if (date.value < 1 || date.value > 31)
+    if (date < 1 || date > 31)
     console.log ("Invalid date");
-    if (month.value < 1 || month.value > 12)
+    if (month < 1 || month > 12)
     console.log ("Invalid month");
 
 
