@@ -13,4 +13,7 @@ form.addEventListener("submit",(e)); {
     
 e.preventDefault ()
 }
-var CC = document.getElementsBy
+var CC = document.getElementsByPlaceHolder ("CC")
+var YY = document.getElementsByPlaceHolder ("YY")
+var MM = document.getElementsByPlaceHolder ("MM")
+var MM = document.getElementsByPlaceHolder ("MM")
