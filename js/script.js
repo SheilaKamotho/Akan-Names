@@ -13,3 +13,4 @@ form.addEventListener("submit",(e)); {
     
 e.preventDefault ()
 }
+var CC = document.getElementsBy
