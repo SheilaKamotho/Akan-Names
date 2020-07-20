@@ -52,16 +52,17 @@
   
    if ((gender === "male" && (DD>0 && DD<=31)&&(MM>0 && MM<=12))){
        console.log(maleAkanNames[Math.round( dayOfWeek)]);
-
-     document.getElementById("akan-name").innerHTML= "Your Akan name is" + maleAkanNames[Math.round(dayOfWeek)];
+       document.getElementById("akan-name").innerHTML= "Your Akan name is"+ "" + maleAkanNames[Math.round(dayOfWeek)];
+       alert ("Your Akan name is" + "" + maleAkanNames[Math.round(dayOfWeek)]);
 
    } else if((gender ==="female" && (DD>0 && DD<=31)&&(MM>0 && MM<=12))){
       console.log(femaleAkanNames[Math.round(dayOfWeek)]);
-
-   document.getElementById("akan-name").innerHTML= "Your Akan name is" + femaleAkanNames[Math.round(dayOfWeek)];
+      document.getElementById("akan-name").innerHTML= "Your Akan name is" + "" + femaleAkanNames[Math.round(dayOfWeek)];
+      alert ("Your Akan name is"+ "" + femaleAkanNames[Math.round(dayOfWeek)]);
    } else{
        console.log("invalid input");
        document.getElementById("akan-name").innerHTML="Invalid month or date";
+       alert ("Invalid month or date")
     }
 
    } 
