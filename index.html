@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akan Names</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/script.js"></script>
+    <title>Akan Names</title>
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">  
-    <h1>Akan Name Generator</h1>
-    <script src ="js/script.js"></script>
-    <img src="images/africa.png" alt="A photo of african culture">
-    <p>The Akans are an ethnicity who primarily live in Ghana.The Akans have</p>
-    <p>a fairly unique naming system. It is based on the day a child is born,</p>
-    <p> and the gender of the child.</p>
-    <h2>Lets have some fun!</h2>
-    <p>Generate your Akan name whilst discovering the day you were born by</p>
-    <p>submitting your birth date details and selecting your gender below.</p>
-    <strong>
-    <form>
-     <label for ="date" > Birthdate </label>
-     <input type ="number" id ="date" placeholder="DD" min=1 max= 31><br>
-     <label for ="month" > Birthmonth </label>
-     <input type ="number" id ="month" placeholder="MM" min=1 max= 12><br>
-     <label for ="year" > Birthyear</label>
-     <input type ="number" id ="year" placeholder="YYYY" min=1000 max= 9999><br> 
-     <label for ="gender">Gender</label><br>
-     <input type="radio" id="male" name="gender">
-     <label for="male">Male</label><br>
-     <input type="radio" id="female" name="gender">
-     <label for="female">Female</label><br>
-     <button>Generate</button>
-    </form>
-  </strong>
+        <h1>Akan Name Generator</h1>
+        <img src="images/africa.png" alt="A photo of african culture">
+        <p>The Akans are an ethnicity who primarily live in Ghana.The Akans have</p>
+        <p>a fairly unique naming system. It is based on the day a child is born,</p>
+        <p> and the gender of the child.</p>
+        <h2>Lets have some fun!</h2>
+        <p>Generate your Akan name by filling the form below.</p>
+        <strong>
+          <form>
+            <label for ="date" > Birthdate </label>
+            <input type ="number" id ="date" placeholder="DD" min=1 max= 31><br>
+            <label for ="month" > Birthmonth </label>
+            <input type ="number" id="month" placeholder="MM" min=1 max= 12><br>
+            <label for ="year" > Birthyear</label>
+            <input type ="number" id="year" placeholder="YYYY" min=1000 max= 9999><br> 
+            Gender<select class="col-md-2" id="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            </select><br>
+            <button type= "my button" onclick="yourDate()">GENERATE</button>
+          </form>
+            <p id="akan-name"></p>
+        </strong>
       </div>
-    </div>    
+    </div>  
+    <script>
+      function yourDate() {
+   var DD = document.getElementById("date").value;
+   var MM = document.getElementById("month").value;
+   var YY = document.getElementById("year").value;
+   var CC = (YY/100);
+   var gender = document.getElementById("gender").value;
+ 
+   var dayOfWeek= ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7;
+   console.log(dayOfWeek);
+ 
+   var maleAkanNames= ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi"," Kwame"];
+   var femaleAkanNames=["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+  
+   if ((gender === "male" && (DD>0 && DD<=31)&&(MM>0 && MM<=12))){
+       console.log(maleAkanNames[Math.round( dayOfWeek)]);
+
+     document.getElementById("akan-name").innerHTML= "Your Akan name is" + maleAkanNames[Math.round(dayOfWeek)];
+
+   } else if((gender ==="female" && (DD>0 && DD<=31)&&(MM>0 && MM<=12))){
+      console.log(femaleAkanNames[Math.round(dayOfWeek)]);
+
+   document.getElementById("akan-name").innerHTML= "Your Akan name is" + femaleAkanNames[Math.round(dayOfWeek)];
+   } else{
+       console.log("invalid input");
+       document.getElementById("akan-name").innerHTML="Invalid month or date";
+    }
+
+   } 
+    </script>  
   </body>
 </html>

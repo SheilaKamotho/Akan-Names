@@ -1,41 +1,31 @@
-var date = parseInt(document.getElementsById ("date").value);
-var month = parseInt(document.getElementsById ("month").value);
-var year = parseInt(document.getElementsById ("year").value);
+function yourDate() {
+   var DD = document.getElementById("date").value;
+   var MM = document.getElementById("month").value;
+   var YY = document.getElementById("year").value;
+   var CC = (YY/100);
+   var gender = document.getElementById("gender").value;
+ 
+   var dayOfWeek= ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7;
+   console.log(dayOfWeek);
+ 
+   var maleAkanNames= ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi"," Kwame"];
+   var femaleAkanNames=["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+  
+   if ((gender === "male" && (DD>0 && DD<=31)&&(MM>0 && MM<=12))){
+       console.log(maleAkanNames[Math.round( dayOfWeek)]);
 
- var century =  Math.round(year/100;)
- dayOfWeek = ( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day )%7;
- console.log(dayofWeek);
- document.getElementById("result").innerHTML =(dayOfWeek);
+     document.getElementById("akan-name").innerHTML= "Your Akan name is" + maleAkanNames[Math.round(dayOfWeek)];
 
- var male = ("kwasi","kwadwo","kwabena","kwaku","yaw", "kofi","kwame")
- if ((gender === male && (dayOfWeek === 0) {
-     console.log("Your birth day was Sunday. Your name is Kwasi")
- } else if (gender === male && dayOfWeek === 1) {
-    console.log ("Your birth day was Monday. Your name is Kwadwo")
- } else if (gender === male && dayOfWeek === 2) {
-    console.log ("Your birth day was Tuesday. Your name is Kwabena")
- }else if (gender === male && dayOfWeek === 3) {
-    console.log ("Your birth day was Wednesday. Your name is Kwaku")
- }else if (gender === male && dayOfWeek === 4) {
-        console.log ("Your birth day was Thursday. Your name is Yaw")
- } else if (gender === male && dayOfWeek === 5) {
-    console.log ("Your birth day was Friday. Your name is Kofi")
- }else if (gender === male && dayOfWeek === 6) {
-    console.log ("Your birth day was Saturday. Your name is Kwame")
- }
+   } else if((gender ==="female" && (DD>0 && DD<=31)&&(MM>0 && MM<=12))){
+      console.log(femaleAkanNames[Math.round(dayOfWeek)]);
 
- if (gender === female && dayOfWeek === 0) {
-    console.log("Your birth day was Sunday. Your name is Akosua")
-} else if (gender === male && dayOfWeek === 1) {
-   console.log ("Your birth day was Monday. Your name is Adwoa")
-} else if (gender === male && dayOfWeek === 2) {
-   console.log ("Your birth day was Tuesday. Your name is Abenaa")
-}else if (gender === male && dayOfWeek === 3) {
-   console.log ("Your birth day was Wednesday. Your name is Akua")
-}else if (gender === male && dayOfWeek === 4) {
-       console.log ("Your birth day was Thursday. Your name is Yaa")
-} else if (gender === male && dayOfWeek === 5) {
-   console.log ("Your birth day was Friday. Your name is Afua")
-}else if (gender === male && dayOfWeek === 6) {
-   console.log ("Your birth day was Saturday. Your name is Ama")
-}
+   document.getElementById("akan-name").innerHTML= "Your Akan name is" + femaleAkanNames[Math.round(dayOfWeek)];
+   } else{
+       console.log("invalid input");
+       document.getElementById("akan-name").innerHTML="Invalid month or date";
+    }
+
+   } 
+
+ 
+
