@@ -2,10 +2,10 @@ function yourDate() {
    var DD = document.getElementById("date").value;
    var MM = document.getElementById("month").value;
    var YY = document.getElementById("year").value;
-   var CC = (YY/100);
+   var CC = document.getElementById("century").value;
    var gender = document.getElementById("gender").value;
- 
-   var dayOfWeek= ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7;
+    
+   var dayOfWeek= (( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7)+1;
    console.log(dayOfWeek);
  
    var maleAkanNames= ["Kwasi-Sunday is your day of birth", "Kwadwo-Monday is your day of birth", "Kwabena-Tuesday is your day of birth", "Kwaku-Wednesday is your day of birth", "Yaw-Thursday is your day of birth", "Kofi-Friday is your day of birth"," Kwame-Saturday is your day of birth"];
